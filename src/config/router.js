@@ -13,6 +13,8 @@ import Login from "../Screens/Login";
 import SignUp from "../Screens/SignUp";
 import Home from "../Screens/Home";
 import AdminPortal from "../Screens/AdminPortal";
+import AddItem from "../Screens/AdminPortal/AddItem";
+import Account from "../Screens/AdminPortal/Account";
 
 
 export default function Router() {
@@ -40,7 +42,7 @@ export default function Router() {
             unSubscribe();
             console.log('Connection Diconnected')
         }
-    }, [])
+    }, [isAdminLogin, isUserLogin])
     const router = createBrowserRouter(
         createRoutesFromElements(
             <>
@@ -49,6 +51,18 @@ export default function Router() {
                     <ProtectedRoute
                         user={isAdminLogin}
                         route={<AdminPortal />}
+                        navigateto='/login' />}
+                />
+                <Route path='/adminportal/additem' element={
+                    <ProtectedRoute
+                        user={isAdminLogin}
+                        route={<AddItem />}
+                        navigateto='/login' />}
+                />
+                <Route path='/adminportal/account' element={
+                    <ProtectedRoute
+                        user={isAdminLogin}
+                        route={<Account />}
                         navigateto='/login' />}
                 />
                 <Route path='/home' element={

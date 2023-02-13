@@ -13,7 +13,7 @@ function AdminHeader() {
                 </div>
             </div>
                 <div className='flex items-center'>
-                    <img className=' cursor-pointer p-2 hover:bg-[#61B846] hover:rounded-xl ' src={listLogo} />
+                    <img className=' cursor-pointer h-14 p-2 mr-2 hover:bg-[#61B846] hover:rounded-xl ' src={listLogo} />
                 </div>
             </div>
         </div>
